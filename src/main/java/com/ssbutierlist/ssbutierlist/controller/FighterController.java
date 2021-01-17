@@ -19,8 +19,13 @@ public class FighterController {
     }
 
     @GetMapping
-    public List<Fighter> getFighters(){
-        return fighterService.getFighter();
+    public List<Fighter> getAllFighters(){
+        return fighterService.getAllFightersFromList();
+    }
+
+    @GetMapping("{name}")
+    public Fighter getFighterByName(@PathVariable String name){
+        return fighterService.getFighterByName(name);
     }
 
     @PostMapping

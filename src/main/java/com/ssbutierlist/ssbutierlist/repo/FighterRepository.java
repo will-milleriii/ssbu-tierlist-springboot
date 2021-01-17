@@ -13,4 +13,6 @@ public interface FighterRepository extends JpaRepository<Fighter, Long> {
     @Query("SELECT f FROM Fighter f WHERE f.name = '*'")
     Optional<Fighter> findFighterByName(String tier);
 
+    Fighter findByName(String name);
+
 }

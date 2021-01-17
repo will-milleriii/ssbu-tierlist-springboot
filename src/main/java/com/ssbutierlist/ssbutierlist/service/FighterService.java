@@ -20,8 +20,12 @@ public class FighterService {
         this.fighterRepository = fighterRepository;
     }
 
-    public List<Fighter> getFighter(){
+    public List<Fighter> getAllFightersFromList(){
         return fighterRepository.findAll();
+    }
+
+    public Fighter getFighterByName(String name){
+        return fighterRepository.findByName(name);
     }
 
     public void addFighter(Fighter fighter) {
